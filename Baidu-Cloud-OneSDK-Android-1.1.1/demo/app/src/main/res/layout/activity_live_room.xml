@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fff"
+        tools:context=".ui.lss.LiveRoomActivity">
+
+        <LinearLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="174dp"
+            android:background="@mipmap/background_lss"
+            android:fitsSystemWindows="true"
+            android:orientation="vertical"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize"
+                app:contentInsetStartWithNavigation="0dp"
+                app:title="音视频直播 Demo"
+                tools:fitsSystemWindows="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="36dp"
+                android:layout_marginStart="56dp"
+                android:text="音视频直播Demo用于展示直播的主播端到端全流程，如主播推流、观众拉流、及连麦互动"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/appbar"
+            android:layout_marginBottom="@dimen/activity_horizontal_margin"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:orientation="vertical">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingTop="@dimen/activity_horizontal_margin">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="57dp"
+                        android:background="#F6F6F6"
+                        android:paddingBottom="10dp"
+                        android:paddingEnd="8dp"
+                        android:paddingStart="8dp"
+                        android:paddingTop="10dp"
+                        android:text="请填写下列信息，多人体验请保持一致（研发人员可通过配置文件填写）"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="19dp"
+                        android:text="推流域名"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/et_url_push"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/background_live_edit_text"
+                            android:hint="用于主播推流"
+                            android:inputType="textUri"
+                            android:paddingBottom="8dp"
+                            android:paddingEnd="0dp"
+                            android:paddingStart="0dp"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="19dp"
+                        android:text="播放域名"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/et_url_play_merge"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/background_live_edit_text"
+                            android:hint="观看全部主播与连麦的混流画面"
+                            android:inputType="textUri"
+                            android:paddingBottom="8dp"
+                            android:paddingEnd="0dp"
+                            android:paddingStart="0dp"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
+                    </android.support.design.widget.TextInputLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="19dp"
+                        android:text="播放域名（低延时）"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/et_url_play"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/background_live_edit_text"
+                            android:hint="仅用于连麦者观看主播"
+                            android:inputType="textUri"
+                            android:paddingBottom="8dp"
+                            android:paddingEnd="0dp"
+                            android:paddingStart="0dp"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="19dp"
+                        android:text="房间号"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/et_room"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/background_live_edit_text"
+                            android:hint="房间号"
+                            android:inputType="text"
+                            android:paddingBottom="8dp"
+                            android:paddingEnd="0dp"
+                            android:paddingStart="0dp"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
+                    </android.support.design.widget.TextInputLayout>
+
+                </LinearLayout>
+            </ScrollView>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_push"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#FF3E67"
+                    android:enabled="false"
+                    android:onClick="onClickPush"
+                    android:text="主播"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                    android:textColor="@android:color/white" />
+
+                <View
+                    android:layout_width="15.5dp"
+                    android:layout_height="match_parent" />
+
+                <Button
+                    android:id="@+id/btn_play"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#108CEE"
+                    android:enabled="false"
+                    android:onClick="onClickPlay"
+                    android:text="观众"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                    android:textColor="@android:color/white" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </RelativeLayout>
+</layout>
