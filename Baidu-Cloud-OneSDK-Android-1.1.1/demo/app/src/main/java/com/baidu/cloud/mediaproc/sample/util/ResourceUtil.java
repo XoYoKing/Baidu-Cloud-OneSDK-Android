@@ -50,16 +50,16 @@ public enum ResourceUtil {
 //                        sessionToken);
 
         // 不推荐 DefaultBceCredentials. 因为ak,sk 泄漏后风险非常大。请使用上面的 DefaultBceSessionCredentials
-        DefaultBceCredentials stsCredentials = new DefaultBceCredentials(ResourceUtilAkSk.VodAK,
-                ResourceUtilAkSk.VodSK);
-        BceClientConfiguration vodConfig = new BceClientConfiguration();
-        vodConfig.withCredentials(stsCredentials);
-
-        BosClientConfiguration bosConfig = new BosClientConfiguration();
-        bosConfig.withCredentials(stsCredentials);
-
-        vodClient = new VodClient(vodConfig);
-        bosClient = new BosClient(bosConfig);
+//        DefaultBceCredentials stsCredentials = new DefaultBceCredentials(ResourceUtilAkSk.VodAK,
+//                ResourceUtilAkSk.VodSK);
+//        BceClientConfiguration vodConfig = new BceClientConfiguration();
+//        vodConfig.withCredentials(stsCredentials);
+//
+//        BosClientConfiguration bosConfig = new BosClientConfiguration();
+//        bosConfig.withCredentials(stsCredentials);
+//
+//        vodClient = new VodClient(vodConfig);
+//        bosClient = new BosClient(bosConfig);
 
         // TODO: 03/05/2017 后面准备使用 bos 的 restapi上传 https://cloud.baidu.com/doc/BOS/API.html#PutObject.E6.8E.A5.E5.8F.A3
         Retrofit retrofit = new Retrofit.Builder()
